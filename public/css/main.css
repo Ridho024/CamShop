@@ -1,0 +1,334 @@
+/* Hero Content Style */
+.hero-content {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("/web_image_asset/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    z-index: 0;
+}
+
+.hero-content .hero-text .web-title {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 0.4rem;
+}
+
+.hero-conten .hero-text .web-desc {
+    font-family: "Anta", sans-serif;
+    font-style: normal;
+}
+
+.hero-content .hero-text div .camera-link {
+    margin-top: 0;
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px 10px 15px;
+    border: 1px solid white;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+.hero-content .hero-text div .camera-link:hover {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    background-color: white;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+/* Hero Content Style */
+
+/* OUR PREMIERE */
+.our-premiere {
+    background-color: white;
+}
+
+.our-premiere .premiere-title {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    font-size: 2.5rem;
+}
+
+.our-premiere .premiere-special {
+    margin-top: 2rem;
+    height: 25rem;
+}
+
+.our-premiere .premiere-special div:nth-child(1),
+.our-premiere .premiere-special div:nth-child(2) {
+    padding: 0;
+}
+
+.our-premiere .premiere-special div:nth-child(1) img,
+.our-premiere .premiere-special div:nth-child(2) img {
+    width: 100%;
+    height: 100%;
+}
+
+.our-premiere .premiere-common {
+    margin-top: 0;
+    height: 25rem;
+}
+
+.our-premiere .premiere-common div:nth-child(1),
+.our-premiere .premiere-common div:nth-child(2) {
+    padding: 0;
+}
+
+.our-premiere .premiere-common div:nth-child(1) img,
+.our-premiere .premiere-common div:nth-child(2) img {
+    width: 100%;
+    height: 100%;
+}
+
+.our-premiere .watch-premiere {
+    font-family: "Anta", sans-serif;
+    font-style: normal;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: 1px solid white;
+    padding: 20px 20px 10px 20px;
+    color: white;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+.our-premiere .watch-premiere:hover {
+    font-family: "Anta", sans-serif;
+    font-style: normal;
+    color: black;
+    background-color: white;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.our-premiere .watch-premiere h1 {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    font-size: 2.5rem;
+}
+
+.our-premiere .watch-premiere .premiere-link {
+    font-family: "Anta", sans-serif;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.our-premiere .watch-premiere .premiere-link:hover {
+    text-decoration: underline;
+}
+
+/* OUR PREMIERE */
+
+/* MOST SEARCHED */
+
+.most-searched .most-searched-title {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    font-size: 2.5rem;
+}
+
+.most-searched-camera .card-group .card .card-body h5 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    color: black;
+    font-weight: 500;
+}
+
+.most-searched-camera .card-group .card .card-body p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    color: black;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 2rem;
+}
+
+.most-searched .card-img-top {
+    height: 17rem;
+}
+
+/* Untuk Responsivenya  */
+@media only screen and (max-width: 768px) {
+    .our-premiere {
+        display: block;
+        margin-bottom: 10rem;
+    }
+    /* .most-searched {
+        display: block;
+        margin-top: 10rem;
+    } */
+}
+/* Untuk Responsivenya  */
+
+.most-searched .see-more {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-right: 1rem;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+.most-searched .see-more:hover {
+    text-decoration: underline;
+}
+
+.most-searched .beli-btn {
+    text-decoration: none;
+    color: black;
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border: 1px solid rgb(215, 213, 213);
+    padding: 7px 20px 7px 20px;
+    background-color: rgb(215, 213, 213);
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.most-searched .beli-btn:hover {
+    border: 1px solid rgb(165, 164, 164);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.most-searched .product-price {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* MOST SEARCHED */
+
+/* OUR SOCIAL MEDIA */
+
+.our-sosmed .sosmed-title {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    font-size: 2.5rem;
+}
+
+.our-sosmed .sosmed-type {
+    box-shadow: -2px 8px 20px 10px rgba(0, 0, 0, 0.189);
+    height: 26rem;
+}
+
+.our-sosmed .sosmed-type .sosmed1 {
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.our-sosmed .sosmed-type .sosmed2 {
+    background-color: white;
+    align-items: center;
+}
+
+.our-sosmed .sosmed-type .sosmed1 h3 {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+}
+.our-sosmed .sosmed-type .sosmed2 h3 {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+}
+
+.sosmed-type .sosmed2 .row .col-md-4 img {
+    width: 90px;
+    height: 90px;
+}
+
+.sosmed-type .sosmed1 .contact-input .send-contact {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border: 1px solid rgb(215, 213, 213);
+    padding: 7px 20px 7px 20px;
+    background-color: rgb(215, 213, 213);
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.sosmed-type .sosmed1 .contact-input .send-contact:hover {
+    border: 1px solid rgb(165, 164, 164);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+/* OUR SOCIAL MEDIA */
+
+/* FOOTER BABY */
+
+.footer {
+    height: 50vh;
+    background: rgb(27, 27, 27);
+}
+
+.footer h2 {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+.footer p {
+    color: white;
+}
+
+/* FOOTER BABY */

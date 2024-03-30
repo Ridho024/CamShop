@@ -1,0 +1,81 @@
+/* REGISTRATION FORM */
+
+.registration-content {
+    width: 100%;
+    height: 100vh;
+}
+
+.registration-content .registration-form {
+    background-color: white;
+    width: 50%;
+    height: 100%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.registration-form h1 {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.input-form {
+    width: 22rem;
+}
+
+.registration-input .input-form .mb-3 label {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.registration-input .input-form .mb-3 input:focus {
+    outline: none;
+    border: 1px solid black;
+}
+
+.form-action .back-link {
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-right: 1rem;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+.form-action .back-link:hover {
+    text-decoration: underline;
+}
+
+.form-action .submit-button {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border: 1px solid rgb(215, 213, 213);
+    padding: 7px 20px 7px 20px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.form-action .submit-button:hover {
+    border: 1px solid rgb(165, 164, 164);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+/* REGISTRATION FORM */
