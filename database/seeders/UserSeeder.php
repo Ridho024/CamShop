@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
             ],
 
             [
-                'username' => 'John Doe',
+                'username' => 'John Doe', 
                 'role' => 'Admin',
                 'email' => 'johndoe321@gmail.com',
                 'password' => 'John123',

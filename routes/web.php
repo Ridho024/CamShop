@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\BuyProductController;
 use App\Http\Controllers\CameraController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\RoutingController;
+use App\Http\Controllers\TransaksiController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Routing\Controllers\Middleware;
 
@@ -44,7 +46,7 @@ Route::get('premiere-product', [RoutingController::class, 'premiereProduct']);
 
 
 // Camera
-Route::get('camera-info', function(){
+Route::get('camera-info', function () {
     return redirect('/');
 });
 Route::get('camera-info/{camera_id}', [CameraController::class, 'cameraInfo']);
@@ -65,3 +67,9 @@ Route::get('camera-info/{camera_id}', [CameraController::class, 'cameraInfo']);
 Route::get('adminview', function () {
     return view('routes/homepage/admin-dashboard');
 });
+
+// Proses Jual Beli
+
+Route::get('camera-info/buy-product-form/{cameraID}', [BuyProductController::class, 'buyProduct']);
+Route::get('buy-product-form/{cameraID}', [BuyProductController::class, 'buyProduct']);
+Route::get('buy-product-form/{cameraID}/buy-process', [BuyProductController::class, 'buyProcess']);

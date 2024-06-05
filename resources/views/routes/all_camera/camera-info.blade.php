@@ -40,7 +40,9 @@
                         <div>
                             <a href="/" class="back-button" id="backToPrevious">Back</a>
                         </div>
-                        <div><a href="/" class="buy-button">Beli</a></div>
+                        @if(session()->get('role') == 'Member')
+                            <div><a href="buy-product-form/{{ $cameraInfo->camera_id }}" class="buy-button">Beli</a></div>
+                        @endif
                     </div>
                 </div>
             </div>

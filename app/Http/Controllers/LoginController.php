@@ -22,7 +22,7 @@ class LoginController extends Controller
     {
 
         $credentials = $request->validate([
-            'email' => ['required', 'email:dns', 'exists_in_database:email,email'],
+            'email' => ['required', 'exists_in_database:email,email'],
             'username' => ['required', 'exists_in_database:username,username'],
             'password' => ['required'] // 'confirmed' buat nanti registrasi
         ], [
@@ -36,7 +36,8 @@ class LoginController extends Controller
                 $user = User::where('username', $request->username)->first();
                 $request->session()->put([
                     'isLogin' => true,
-                    'idUser' => $user->id
+                    'idUser' => $user->id,
+                    'role' => $user->role,
                 ]);
 
                 return redirect('homepage');

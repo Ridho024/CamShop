@@ -29,14 +29,15 @@ class RegistrationController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'updated_at' => Carbon::now(),
         ]);
 
         if ($newUser) {
             $user = User::where('username', $request->username)->first();
             $request->session()->put([
                 'isLogin' => true,
-                'idUser' => $user->id
+                'idUser' => $user->id,
+                'role' => $user->role,
             ]);
 
             return redirect('homepage');
