@@ -86,7 +86,7 @@
                                         {{ $item->camera_spesification }}
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <div class="product-price">
+                                        <div class="product-price"> 
                                             Rp. {{ $item->camera_price }}
                                         </div>
                                         <div class="d-flex align-items-center">

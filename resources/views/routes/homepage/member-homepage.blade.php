@@ -91,15 +91,67 @@
 
                     {{-- MEMBER ACTION --}}
                     <div class="crud-navigation border-bottom border-1 d-flex justify-content-center align-items-center w-100">
-                        <h3>HISTORY</h3>
+                        <h4>YOUR INVOICE</h4>
                     </div>
+                    <div class="products-invoice pt-4">
+                        @foreach($userInvoices as $invoice => $item)
+                            <div class="row camera-invoice mb-4 py-2 shadow">
+                                <div class="col-md-3 camera-image d-flex">
+                                    <img src="{{ asset('product_image/' . $item->camera_foto) }}" class="card-img-top rounded-25" alt="Image Foto">
+                                </div>
+                                <div class="col-md-6 camera-detail">
+                                    <div class="row">
+                                        <div class="col-sm-4 px-0 d-flex justify-content-between"><span>Name Camera</span><span>:</span></div>
+                                        <div class="col-sm-8">{{ $item->camera_name }}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4 px-0 d-flex justify-content-between"><span>Quantity</span><span>:</span></div>
+                                        <div class="col-sm-8">{{ $item->quantity }}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4 px-0 d-flex justify-content-between"><span>Total Price</span><span>:</span></div>
+                                        <div class="col-sm-8">Rp{{ number_format($item->total_price, 0, ',', '.') }}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4 px-0 d-flex justify-content-between"><span>Status</span><span>:</span></div>
+                                        <div class="col-sm-8">{{ $item->status }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 invoice-action px-2 d-flex jutify-content-center align-items-center">
+                                    <div class="member-btn">
+                                        @if ($item->status == 'Pending')
+                                            <a href="product-invoice/member/cancel/{{ $item->no }}" class="cancel">Cancel</a>
+                                        @elseif($item->status == 'Accepted')
+                                            <a href="product-invoice/member/pay-invoice/{{ $item->no }}" class="pay-invoice">Pay Invoice</a>
+                                            <a href="product-invoice/member/cancel/{{ $item->no }}" class="cancel">Cancel</a>  
+                                        @elseif($item->status == 'Sending')
+                                            <a href="product-invoice/member/remove/{{ $item->no }}" class="remove">Remove</a>
+                                        @elseif($item->status == 'Rejected')
+                                            <a href="product-invoice/member/cancel/{{ $item->no }}" class="cancel">Cancel</a>
+                                        @elseif($item->status == 'Canceled')
+                                            <a href="product-invoice/member/delete-invoice/{{ $item->no }}" class="delete">Delete</a>
+                                        @elseif($item->status == 'Already Paid')
+                                            <a>Paid Invoice</a>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                            
                     {{-- MEMBER ACTION --}}
-
                 </div>
             </div>
         </div>
         {{-- member IDENTITY --}}
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        const disabledButton = document.getElementById('disabledButton');
+        disabledButton.addEventListener('click', function() {
+            alert('You cannot pay the invoice because the invoice is not accepted yet')
+        })
+    </script>
 </body>
 </html>

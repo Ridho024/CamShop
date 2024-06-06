@@ -21,6 +21,7 @@ class BuyCamera extends Model
         'camera_id',
         'user_id',
         'camera_name',
+        'camera_foto',
         'quantity',
         'total_price',
         'address',

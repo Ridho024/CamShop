@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('camera_id');
             $table->integer('user_id');
             $table->string('camera_name', 255);
+            $table->string('camera_foto', 255);
             $table->integer('quantity');
             $table->string('total_price', 50);
             $table->string('address', 500);

@@ -85,11 +85,18 @@
                                     <div class="d-flex align-items-center">
                                         <a href="/camera-info/{{ $item->camera_id }}" class="see-more">See more</a>
                                         {{-- <a href="product/{{ $item->IdCamera }}">Beli</a> --}}
-                                        @if (session()->has('isLogin'))
-                                            <a class="beli-btn" href="/camera/{{ $item->camera_id }}">Beli</a>
+                                        @if (session()->has('isLogin') && session()->get('role') == 'Member')
+                                            <a class="beli-btn" href="buy-product-form/{{ $item->camera_id }}">Beli</a>
+                                        @elseif(session()->has('isLogin') && session()->get('role') == 'Admin')
+                                            <a href=""></a>
                                         @else
                                             <a class="beli-btn" href="/login-required">Beli</a>
                                         @endif
+                                        {{-- @if (session()->has('isLogin'))
+                                            <a class="beli-btn" href="/camera/{{ $item->camera_id }}">Beli</a>
+                                        @else
+                                            <a class="beli-btn" href="/login-required">Beli</a>
+                                        @endif --}}
                                     </div>
                                 </div>
                             </div>

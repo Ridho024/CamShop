@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BuyCamera;
 use App\Models\Camera;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -41,15 +42,20 @@ class RoutingController extends Controller
 
             if ($dataUser->role == 'Admin') {
 
-                return view('routes/homepage/admin-dashboard', ['adminProfile' => $dataUser]);
+                $productsInvoice = BuyCamera::all();
+
+                return view('routes/homepage/admin-dashboard', ['adminProfile' => $dataUser, 'productsInvoice' => $productsInvoice]);
 
                 // return "Anda adalah seorang admin";
                 // return redirect('homepage');
                 //return view('routes/homepage/admin-dashboard', ['adminProfile', $maybeIDK]);
 
             } else if ($dataUser->role == 'Member') {
+                $userInvoices = BuyCamera::where('user_id', $idUser)->get();
 
-                return view('routes/homepage/member-homepage', ['memberProfile' => $dataUser]);
+                return view('routes/homepage/member-homepage', ['memberProfile' => $dataUser, 'userInvoices' => $userInvoices]);
+
+                // dd($userInvoice);
             } else {
                 return 'Sorry, but something went trouble, please try again';
             }

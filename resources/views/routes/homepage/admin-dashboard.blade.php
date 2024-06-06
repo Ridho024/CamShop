@@ -94,9 +94,53 @@
                     {{-- ADMIN ACTION --}}
                     <div class="crud-navigation border-bottom border-1 d-flex justify-content-center align-items-center w-100">
                         <div class="d-flex">
-                            <div><a href="">List Product</a></div>
-                            <div><a href="">Add Product</a></div>
+                            <h3>PRODUCTS INVOICE</h3>
                         </div>
+                    </div>
+                    <div class="products-invoice pt-4">
+                        @foreach($productsInvoice as $invoice => $item)
+                            <div class="row camera-invoice mb-4 py-2 shadow">
+                                <div class="col-md-3 camera-image d-flex">
+                                    <img src="{{ asset('product_image/' . $item->camera_foto) }}" class="card-img-top rounded-25" alt="Image Foto">
+                                </div>
+                                <div class="col-md-6 camera-detail">
+                                    <div class="row">
+                                        <div class="col-sm-4 px-0 d-flex justify-content-between"><span>Name Camera</span><span>:</span></div>
+                                        <div class="col-sm-8">{{ $item->camera_name }}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4 px-0 d-flex justify-content-between"><span>Quantity</span><span>:</span></div>
+                                        <div class="col-sm-8">{{ $item->quantity }}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4 px-0 d-flex justify-content-between"><span>Total Price</span><span>:</span></div>
+                                        <div class="col-sm-8">Rp{{ number_format($item->total_price, 0, ',', '.') }}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4 px-0 d-flex justify-content-between"><span>Status</span><span>:</span></div>
+                                        <div class="col-sm-8">{{ $item->status }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 invoice-action px-2 d-flex jutify-content-center align-items-center">
+                                    <div class="admin-btn">
+                                        @if ($item->status == 'Pending')
+                                            <a href="product-invoice/admin/accept/{{ $item->no }}" class="accept-btn">Accept</a>
+                                            <a href="product-invoice/admin/reject/{{ $item->no }}" class="reject-btn">Reject</a>
+                                        @elseif($item->status == 'Accepted')
+                                            <a href="product-invoice/admin/reject/{{ $item->no }}" class="reject-btn">Cancel</a>
+                                        @elseif($item->status == 'Already Paid')
+                                            <a href="product-invoice/admin/send/{{ $item->no }}" class="accept-btn">Send Camera</a>
+                                        @elseif($item->status == 'Sending')
+                                            <a>Product Sended</a>
+                                        
+                                        @elseif($item->status == 'Canceled')
+                                            <a href="product-invoice/admin/accept/{{ $item->no }}" class="accept-btn">Accept</a>
+                                            <a href="product-invoice/admin/reject/{{ $item->no }}" class="reject-btn">Reject</a>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                     {{-- ADMIN ACTION --}}
 

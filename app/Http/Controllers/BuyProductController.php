@@ -40,6 +40,7 @@ class BuyProductController extends Controller
             'camera_id' => $camera->camera_id,
             'user_id' => $userID,
             'camera_name' => $cameraName,
+            'camera_foto' => $camera->foto_camera,
             'quantity' => $quantity,
             'total_price' => $totalPrice,
             'address' => $userAddress,
@@ -53,10 +54,50 @@ class BuyProductController extends Controller
         }else {
             return 'Hadeh';
         }
+    }
 
-        
+    function adminAction($action, $invoiceNumber){
+        $invoice = BuyCamera::find($invoiceNumber);
 
-        
+        if($action == 'accept'){
+            $invoice->status = 'Accepted';
+            $invoice->save();
 
+            return redirect('homepage');
+        }else if($action == 'send'){
+            $invoice->status = 'Sending';
+            $invoice->save();
+
+            return redirect('homepage');
+        }else if($action == 'reject'){
+            $invoice->status = 'Rejected';
+            $invoice->save();
+
+            return redirect('homepage');
+        }
+    }
+
+    function memberAction($action, $invoiceNumber){
+        $invoice = BuyCamera::find($invoiceNumber);
+
+        if($action == 'pay-invoice'){
+            $invoice->status = 'Already Paid';
+            $invoice->save();
+
+            return redirect('homepage');
+        }else if($action == 'cancel'){
+            $invoice->status = 'Canceled';
+            $invoice->save();
+
+            return redirect('homepage');
+        }else if($action == 'delete-invoice'){
+            $invoice->delete();
+
+            return redirect('homepage');
+        }else if($action == 'remove'){
+            $invoice->delete();
+
+            return redirect('homepage');
+        }
     }
 }

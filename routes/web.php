@@ -69,7 +69,12 @@ Route::get('adminview', function () {
 });
 
 // Proses Jual Beli
-
 Route::get('camera-info/buy-product-form/{cameraID}', [BuyProductController::class, 'buyProduct']);
 Route::get('buy-product-form/{cameraID}', [BuyProductController::class, 'buyProduct']);
 Route::get('buy-product-form/{cameraID}/buy-process', [BuyProductController::class, 'buyProcess']);
+
+// INVOICE
+# Admin
+Route::get('product-invoice/admin/{action}/{invoiceNumber}', [BuyProductController::class, 'adminAction']);
+# Member/Customer
+Route::get('product-invoice/member/{action}/{invoiceNumber}', [BuyProductController::class, 'memberAction']);
