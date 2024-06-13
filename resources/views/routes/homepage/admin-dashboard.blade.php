@@ -118,24 +118,35 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-4 px-0 d-flex justify-content-between"><span>Status</span><span>:</span></div>
-                                        <div class="col-sm-8">{{ $item->status }}</div>
+                                        <div class="col-sm-8">
+                                            @if ($item->status == 'Pending')
+                                                <span>The invoice has'nt been accepted yet.</span>
+                                            @elseif($item->status == 'Accepted')
+                                                <span>You have accepted this invoice.</span>
+                                            @elseif($item->status == 'Already Paid')
+                                                <span>The customer has paid the bill, please send the camera.</span>
+                                            @elseif($item->status == 'Sending')
+                                                <span>Product is seending to customer address.</span>
+                                            @elseif($item->status == 'Canceled')
+                                                <span>The customer has canceled the invoice.</span>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-3 invoice-action px-2 d-flex jutify-content-center align-items-center">
                                     <div class="admin-btn">
                                         @if ($item->status == 'Pending')
-                                            <a href="product-invoice/admin/accept/{{ $item->no }}" class="accept-btn">Accept</a>
-                                            <a href="product-invoice/admin/reject/{{ $item->no }}" class="reject-btn">Reject</a>
+                                            <a href="product-invoice/admin/accept/{{ $item->no }}" id="accept-btn">Accept</a>
+                                            <a href="product-invoice/admin/reject/{{ $item->no }}" id="reject-btn">Reject</a>
                                         @elseif($item->status == 'Accepted')
-                                            <a href="product-invoice/admin/reject/{{ $item->no }}" class="reject-btn">Cancel</a>
+                                            <a href="product-invoice/admin/reject/{{ $item->no }}" id="cancel-btn">Cancel</a>
                                         @elseif($item->status == 'Already Paid')
-                                            <a href="product-invoice/admin/send/{{ $item->no }}" class="accept-btn">Send Camera</a>
+                                            <a href="product-invoice/admin/send/{{ $item->no }}" id="send-btn">Send Camera</a>
                                         @elseif($item->status == 'Sending')
-                                            <a>Product Sended</a>
-                                        
-                                        @elseif($item->status == 'Canceled')
-                                            <a href="product-invoice/admin/accept/{{ $item->no }}" class="accept-btn">Accept</a>
-                                            <a href="product-invoice/admin/reject/{{ $item->no }}" class="reject-btn">Reject</a>
+                                            <a>Product Sended</a> 
+                                        @elseif($item->status == 'Canceled Accept')
+                                            <a href="product-invoice/admin/accept/{{ $item->no }}" id="accept-btn">Accept</a>
+                                            <a href="product-invoice/admin/reject/{{ $item->no }}" id="reject-btn">Reject</a>
                                         @endif
                                     </div>
                                 </div>

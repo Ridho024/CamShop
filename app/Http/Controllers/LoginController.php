@@ -61,15 +61,6 @@ class LoginController extends Controller
         return view('routes/login_register/login-form')->with('wrongPassword', true);
     }
 
-    public function adminDashboard($IdUser)
-    {
-        $user = User::find($IdUser);
-        return view('routes/homepage/admin-dashboard', [
-            'email' => $user->email,
-            'username' => $user->username
-        ]);
-    }
-
     public function logout(Request $request){
         Auth::logout();
 

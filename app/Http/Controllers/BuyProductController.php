@@ -52,7 +52,7 @@ class BuyProductController extends Controller
         if($isSuccess){
             return redirect('homepage');
         }else {
-            return 'Hadeh';
+            return 'Failed';
         }
     }
 
@@ -71,6 +71,11 @@ class BuyProductController extends Controller
             return redirect('homepage');
         }else if($action == 'reject'){
             $invoice->status = 'Rejected';
+            $invoice->save();
+
+            return redirect('homepage');
+        }else if($action == 'cancel'){
+            $invoice->status = 'Canceled Accept';
             $invoice->save();
 
             return redirect('homepage');

@@ -20,10 +20,10 @@ class CameraController extends Controller
         return view('index')->with('mostSearch', $data);
     }
 
-    public function showCamera(string $IdCamera)
-    {
-        return $IdCamera;
-    }
+    // public function showCamera(string $IdCamera)
+    // {
+    //     return $IdCamera;
+    // }
 
     // public function listCamera()
     // {
@@ -40,6 +40,7 @@ class CameraController extends Controller
         $camera = Camera::find($camera_id);
         $camera->camera_price = number_format($camera->camera_price, 0, ',', '.');
 
+        // Maka, Rp4.000.000
         // foreach ($camera as $item) {
         //     $item->camera_price = number_format($item->camera_price, 0, ',', '.');
         // }

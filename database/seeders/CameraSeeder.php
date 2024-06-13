@@ -56,7 +56,7 @@ class CameraSeeder extends Seeder
                 ' Canon EOS 80D dibekali dengan sensor APS-C dengan ukuran 24MP terintegrasi prosesor DIGIC 6 dan 45 titik autofokus Hybrid serta rentang ISO 100-16000 yang bisa ditingkatkan ke 25600. Beralih ke Live View dan sistem autofokus pada video, 80D menggunakan teknologi Dual Pixel CMOS AF seperti 70D, yang berarti memiliki titik deteksi fase pada sensor gambar itu sendiri. Sistem AF mode Live View dan Video yang dimiliki Canon EOS 80D cukup bagus dan cepat untuk memotret subjek bergerak dalam beberapa situasi. Sementara itu, sistem pemrosesan DIGIC 6 yang dimiliki kamera ini juga membantu memproses gambar yang lebih tajam serta minim noise.',
                 'camera_price' => 5000000,
                 'foto_camera' => 'Canon 80D.jpg',
-                'user_id' => 2,
+                'user_id' => 2, 
             ],
             [
                 'transaction_id' => 161616,

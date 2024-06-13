@@ -16,7 +16,6 @@ class RegistrationController extends Controller
 
     public function registrationProses(Request $request)
     {
-
         $request->validate([
             'email' => ['required', 'string', 'email'],
             'username' => ['required', 'string', 'max:50', 'unique:users'],
@@ -46,7 +45,7 @@ class RegistrationController extends Controller
             return "Registration failed";
         }
 
-        return "Ughh... Shit";
+        return "Gagal boy";
 
         // return response()->json(['message' => 'Registration successful', 'user' => $newUser], 201);
     }

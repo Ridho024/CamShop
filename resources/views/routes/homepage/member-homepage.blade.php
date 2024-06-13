@@ -114,24 +114,38 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-4 px-0 d-flex justify-content-between"><span>Status</span><span>:</span></div>
-                                        <div class="col-sm-8">{{ $item->status }}</div>
+                                        <div class="col-sm-8 d-flex justify-content-center">
+                                            @if ($item->status == 'Pending')
+                                                <span>Waiting for admin preparing your product, please waiting.</span>
+                                            @elseif($item->status == 'Accepted')
+                                                <span>Admin has been acepted you invoice, please confirm the payment.</span>
+                                            @elseif($item->status == 'Already Paid')
+                                                <span>Thank you for paying your invoice, waiting for admin to send your camera.</span>
+                                            @elseif($item->status == 'Sending')
+                                                <span>Admin has been send your camera to the your home address.</span>
+                                            @elseif($item->status == 'Canceled')
+                                                <span>You canceled the camera invoice.</span>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-3 invoice-action px-2 d-flex jutify-content-center align-items-center">
                                     <div class="member-btn">
                                         @if ($item->status == 'Pending')
-                                            <a href="product-invoice/member/cancel/{{ $item->no }}" class="cancel">Cancel</a>
+                                            <a href="product-invoice/member/cancel/{{ $item->no }}" id="cancel">Cancel</a>
                                         @elseif($item->status == 'Accepted')
-                                            <a href="product-invoice/member/pay-invoice/{{ $item->no }}" class="pay-invoice">Pay Invoice</a>
-                                            <a href="product-invoice/member/cancel/{{ $item->no }}" class="cancel">Cancel</a>  
+                                            <a href="product-invoice/member/pay-invoice/{{ $item->no }}" id="pay-invoice">Pay Invoice</a>
+                                            <a href="product-invoice/member/cancel/{{ $item->no }}" id="cancel">Cancel</a>  
                                         @elseif($item->status == 'Sending')
-                                            <a href="product-invoice/member/remove/{{ $item->no }}" class="remove">Remove</a>
+                                            <a href="product-invoice/member/remove/{{ $item->no }}" id="remove">Remove</a>
                                         @elseif($item->status == 'Rejected')
-                                            <a href="product-invoice/member/cancel/{{ $item->no }}" class="cancel">Cancel</a>
+                                            <a href="product-invoice/member/cancel/{{ $item->no }}" id="cancel">Cancel</a>
                                         @elseif($item->status == 'Canceled')
-                                            <a href="product-invoice/member/delete-invoice/{{ $item->no }}" class="delete">Delete</a>
+                                            <a href="product-invoice/member/delete-invoice/{{ $item->no }}" id="delete">Delete</a>
                                         @elseif($item->status == 'Already Paid')
                                             <a>Paid Invoice</a>
+                                        @elseif($item->status == 'Canceled Accept')
+                                            <a href="product-invoice/member/cancel/{{ $item->no }}" id="cancel">Cancel</a>
                                         @endif
                                     </div>
                                 </div>

@@ -128,3 +128,17 @@
 }
 /* INVOICE */
 
+/* INVOICE BUTTON */
+#reject-btn, #cancel-btn {
+    background-color: rgba(247, 46, 46, 0.895);
+}
+
+#accept-btn {
+    background-color: rgb(55, 138, 55, 0.895);
+}
+
+#send-btn {
+    background-color: rgb(48, 48, 237, 0.895);
+}
+/* INVOICE BUTTON */ 
+
